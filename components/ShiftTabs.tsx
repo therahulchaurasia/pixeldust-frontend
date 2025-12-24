@@ -6,7 +6,6 @@ import { useSearchParams } from 'next/navigation';
 export default function ShiftTabs() {
   const searchParams = useSearchParams();
   const currentView = getFilterType(searchParams.get('view'));
-  console.log('ShiftTabs re-rendered');
   const getTabClasses = (isActive: boolean) => {
     const base = isActive ? 'text-brand-900' : 'text-brand-300';
     return `${base} hover:text-brand-600 transition-colors`;

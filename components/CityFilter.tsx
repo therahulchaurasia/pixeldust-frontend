@@ -16,7 +16,6 @@ function CityFilter({
 }: CityFilterProps) {
   const { interactingId } = useInteraction();
   const cities = Object.keys(cityCounts).sort();
-  console.log('does this re-render?');
   useEffect(() => {
     if (cities.length > 0 && !selectedCity) {
       onSelectCity(cities[0]);
