@@ -1,15 +1,14 @@
 'use client';
+import { getFilterType } from '@/lib/shiftUtils';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 export default function ShiftTabs() {
   const searchParams = useSearchParams();
-  const view = searchParams.get('view');
-  const currentView = view === 'available' ? 'available' : 'my-shifts';
+  const currentView = getFilterType(searchParams.get('view'));
+  console.log('ShiftTabs re-rendered');
   const getTabClasses = (isActive: boolean) => {
-    const base = isActive
-      ? 'text-brand-900 font-bold'
-      : 'text-brand-300 font-medium';
+    const base = isActive ? 'text-brand-900' : 'text-brand-300';
     return `${base} hover:text-brand-600 transition-colors`;
   };
 

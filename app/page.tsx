@@ -1,10 +1,17 @@
+import { InteractionProvider } from '@/components/InteractionContext';
 import PageContainer from '@/components/PageContainer';
+import ShiftList from '@/components/ShiftList';
 import ShiftTabs from '@/components/ShiftTabs';
 
-export default function Home() {
+function Home() {
   return (
     <PageContainer>
-      <ShiftTabs />
+      <InteractionProvider>
+        <ShiftTabs />
+       <ShiftList />
+      </InteractionProvider>
     </PageContainer>
   );
 }
+
+export default Home;
